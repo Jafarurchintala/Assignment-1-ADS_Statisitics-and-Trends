@@ -1,4 +1,4 @@
-# Import necessary libraries
+# Import necessary python packages
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -9,13 +9,13 @@ data = pd.read_csv('financials.csv')
 # Display the dataset
 print(data)
 
-# Check for missing values
+# Check if missing values are there
 print(data.isnull().sum())
 
 # Drop columns 'Symbol' and 'SEC Filings'
 data = data.drop(['Symbol', 'SEC Filings'], axis="columns")
 
-# Sort the data by 'Price' in descending order
+# Sorting data by 'Price' in descending order
 data = data.sort_values(by=['Price'], ascending=False)
 
 # Display the sorted data
@@ -58,7 +58,7 @@ def heatmap():
     plt.yticks(range(len(corr_matrix.columns)), corr_matrix.columns)
     plt.show()  
 
-# Call the plotting functions
+# Call plotting functions
 line()
 barplot()   
 heatmap()
